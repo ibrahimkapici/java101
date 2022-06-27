@@ -5,7 +5,20 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	Scanner kb = new Scanner(System.in);
+		Scanner kb = new Scanner(System.in);
+		System.out.println("Lütfen ürünün fiyatını giriniz:");
+		double price = kb.nextDouble();
+		double total;
+		if (price > 1000)
+			total = price * 1.10;
+		else {
+			total = price * 1.18;
+		}
+		System.out.println(total + "ürünün kdv dahil fiyatıdır.");
+
+
+
+/*	Scanner kb = new Scanner(System.in);
 	System.out.println("Not ortalaması almak için lütfen derslerin gerekli not puanlarını giriniz:");
 
 	System.out.println("Matematik dersinin notunu giriniz:");
@@ -28,7 +41,7 @@ public class Main {
 
  	int ortalama = (mat + fizik + kimya + tarih + muzik + turkce) / 6;
 
-    System.out.println(ortalama > 60 ? "Sınıfı geçti": "Sınıfta kaldı");
+    System.out.println(ortalama > 60 ? "Sınıfı geçti": "Sınıfta kaldı");*/
     }
 
 }
