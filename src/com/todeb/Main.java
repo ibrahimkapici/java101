@@ -9,31 +9,44 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
-		System.out.println("Lütfen kullanıcı adınızı giriniz:");
-		String id = kb.nextLine();
-		System.out.println("Lütfen kullanıcı şifrenizi giriniz:");
-		String pass = kb.nextLine();
+		int count = 6;
+		System.out.println("Not ortalaması almak için lütfen derslerin gerekli not puanlarını giriniz:");
 
-		if (id.equals("patika") && pass.equals("java123")) {
-			System.out.print("Giriş başarılı");
-		} else {
-			System.out.print("Kullancı adı ya da şifre hatalı. Şifre sıfırlamak ister misiniz? Select 1-Evet 2-Hayır");
-			int select = kb.nextInt();
-			switch (select) {
-				case 1:
-					Scanner kbd = new Scanner(System.in);
-					System.out.println("Lütfen yeni bir şifre giriniz:");
-					String newPass = kbd.nextLine();
-					if (newPass.equals(pass)) {
-						System.out.println("Yeni şifre ile eski şifre aynı olamaz. Lütfen başka bir şifre giriniz.");
-					} else
-						System.out.println("Şifre başarılı bir şekilde değiştirildi.");
+		System.out.println("Matematik dersinin notunu giriniz:");
+		int mat = kb.nextInt();
+		System.out.println("Fizik dersinin notunu giriniz:");
+		int fizik = kb.nextInt();
+		System.out.println("Kimya dersinin notunu giriniz:");
+		int kimya = kb.nextInt();
+		System.out.println("Tarih dersinin notunu giriniz:");
+		int tarih = kb.nextInt();
+		System.out.println("Müzik dersinin notunu giriniz:");
+		int muzik = kb.nextInt();
+		System.out.println("Türkçe dersinin notunu giriniz:");
+		int turkce = kb.nextInt();
 
-					break;
-
-				case 2:
-					System.out.println("Lütfen şifrenizi kontrol edip tekrar login olunuz.");
-			}
+		if (mat <0 || mat > 100){
+			mat = 0;
+			count--;
 		}
+		if (fizik <0 || fizik > 100){
+			fizik = 0;
+			count--;
+		}
+		if (kimya <0 || kimya > 100){
+			kimya = 0;
+			count--;
+		}
+		if (muzik <0 || muzik > 100){
+			muzik = 0;
+			count--;
+		}
+		if (turkce <0 || turkce > 100){
+			turkce = 0;
+			count--;
+		}
+		int ortalama = (mat + fizik + kimya + tarih + muzik + turkce) / count;
+		System.out.println("Ortalama = " + ortalama);
+		System.out.println(ortalama > 55 ? "Sınıfı geçti": "Sınıfta kaldı");
 	}
 }
