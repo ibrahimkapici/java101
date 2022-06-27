@@ -2,19 +2,21 @@ package com.todeb;
 
 import java.util.Scanner;
 
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
+
 public class Main {
 
     public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
-		System.out.println("Lütfen ürünün fiyatını giriniz:");
-		double price = kb.nextDouble();
-		double total;
-		if (price > 1000)
-			total = price * 1.10;
-		else {
-			total = price * 1.18;
-		}
-		System.out.println(total + "ürünün kdv dahil fiyatıdır.");
+		System.out.println("Lütfen ilk kenar uzunluğunu giriniz:");
+		double len1 = kb.nextDouble();
+		System.out.println("Lütfen ikinci kenar uzunluğunu giriniz:");
+		double len2 = kb.nextDouble();
+		double hippow2;
+		hippow2 = pow(len1, 2) + pow(len2, 2);
+		double hip = sqrt(hippow2);
+		System.out.println(hip + " Üçgenin hipotenus uzunluğudur.");
 
 
 
