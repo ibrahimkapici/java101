@@ -9,19 +9,14 @@ public class Main {
 
     public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
-		System.out.println("Lütfen kaç km yol gittiğinizi giriniz:");
-		double km = kb.nextDouble();
-		double price = 20.0;
-		double openPrice = 10.0;
-		double pricePerKm = 2.20;
-		double totalPrice;
-		totalPrice = openPrice + (km * pricePerKm);
-		if(totalPrice <= 20) {
-			System.out.println("Toplam fiyat" + 20 + "TL.");
-		}
-		else {
-			System.out.println("Toplam fiyat" + totalPrice + "TL.");
-		}
+		System.out.println("Lütfen dairenin yarıçapını giriniz:");
+		double r = kb.nextDouble();
+		System.out.println("Lütfen dairenin açışını giriniz");
+		double deg = kb.nextDouble();
+		double area = 3.14 * pow(r, 2);
+		double cevre = 2 * 3.14 * r;
+		deg *= area/360;
+		System.out.println(deg);
     }
 
 }
